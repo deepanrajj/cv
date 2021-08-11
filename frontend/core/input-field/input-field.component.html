@@ -1,0 +1,27 @@
+<div [formGroup]="form" class="input-field">
+
+  <ng-container [ngSwitch]="controlType">
+    <!-- Input Field Container -->
+    <div *ngSwitchCase="'textbox'" class="input-field__container">
+      <input class="input-field__container__control" [formControlName]="key" [placeholder]="placeholder" [id]="key" [type]="inputType">
+    </div>
+
+    <!-- Textarea Container -->
+    <div *ngSwitchCase="'textarea'" class="input-field__container">
+      <textarea class="input-field__container__control" [formControlName]="key" [placeholder]="placeholder" [id]="key" rows="6"></textarea>
+    </div>
+
+    <!-- Validation Errors Container -->
+    <div class="input-field__error">
+      <div *ngIf="!isValid">
+        <ng-container *ngIf="fieldErrors?.required">
+          {{'* Required'}}
+        </ng-container>
+
+        <ng-container *ngIf="fieldErrors?.email">
+          {{ 'Not a valid email format'}}
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</div>

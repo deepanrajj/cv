@@ -1,0 +1,41 @@
+@import '../styles-variables';
+
+/*************************************************************
+               app variables
+*************************************************************/
+$app-height: 100vh !default;
+$app-container-left-width: calc(50% - 150px) !default;
+$app-container-right-width: calc(50% + 150px) !default;
+$app-container-right-background: $app-primary-color !default;
+$app-container-right-min-height: 450px !default;
+$app-container-right-max-height: 450px !default;
+
+.app {
+  height: $app-height;
+
+  &__container {
+    display: flex;
+    padding: 30px 15px 0 15px;
+    width: 100%;
+    margin: 40px auto;
+
+    &__left {
+      flex: 0 0 $app-container-left-width;
+    }
+
+    &__right {
+      display: flex;
+      flex: 1 0 $app-container-right-width;
+      transition: 0.5s all;
+
+      &__container {
+        background: $app-container-right-background;
+        width: 100%;
+        margin: 40px 0;
+        min-height: $app-container-right-min-height;
+        max-height: $app-container-right-max-height;
+        overflow-y: scroll;
+      }
+    }
+  }
+}

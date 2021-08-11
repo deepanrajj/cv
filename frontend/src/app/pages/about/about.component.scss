@@ -1,0 +1,28 @@
+@import './src/styles-variables';
+
+/*************************************************************
+               about variables
+*************************************************************/
+$about-title-font-family: $app-font-family-medium !default;
+$about-title-font-size: 24px !default;
+$about-title-font-color: $app-font-color-secondary !default;
+
+.about {
+  flex-direction: column;
+  padding: 40px;
+
+  &__expertises, &__skills {
+
+    &__title {
+      font-family: $about-title-font-family;
+      font-size: $about-title-font-size;
+      color: $about-title-font-color;
+      margin: 5px 0;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

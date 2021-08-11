@@ -1,0 +1,37 @@
+<div *ngIf="(research$ | async) as research" class="flex-grid research">
+
+  <!-- Title -->
+  <ng-container *ngIf="research.title">
+    <div class="research__title">{{research.title | uppercase}}</div>
+    <hr>
+  </ng-container>
+
+  <div *ngFor="let researchInfo of research.researchInfos"
+       [id]="'research__tile__'+researchInfo.id" class="research__tile">
+
+    <!-- Detail -->
+    <div class="research__tile__title">{{researchInfo.title}}</div>
+    <div class="research__tile__detail">
+      {{researchInfo.subtitle | uppercase}}
+      <span *ngIf="researchInfo.link"
+            class="research__tile__detail__place">{{' | ' + researchInfo.link.name | uppercase}}</span>
+    </div>
+
+    <!-- Video -->
+    <div *ngIf="researchInfo.video" class="research__tile__video">
+      <div *ngIf="researchInfo.video.embed" class="research__tile__video__embed">
+        <iframe [src]="sanitizeUrl(researchInfo.video.embed)"
+                [width]="researchInfo.video.width" [height]="researchInfo.video.height" allow="autoplay"></iframe>
+      </div>
+      <video *ngIf="!researchInfo.video.embed"
+             [width]="researchInfo.video.width" [height]="researchInfo.video.height" controls>
+        <source [src]="researchInfo.video.src" [type]="researchInfo.video.type">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Content -->
+    <div *ngIf="researchInfo.about"
+         class="research__tile__content" [innerHTML]="sanitizeHtml(researchInfo.about)"></div>
+  </div>
+</div>

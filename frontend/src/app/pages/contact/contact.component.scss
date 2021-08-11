@@ -1,0 +1,65 @@
+@import './src/styles-variables';
+
+/*************************************************************
+               contact variables
+*************************************************************/
+$contact-title-font-family: $app-font-family-medium !default;
+$contact-title-font-size: 24px !default;
+$contact-title-font-color: $app-font-color-secondary !default;
+$contact-detail-icon-size: 26px !default;
+$contact-detail-info-title-font-size: 18px !default;
+$contact-detail-info-subtitle-color: #8f8f8f !default;
+$contact-detail-info-link-color: #8f8f8f !default;
+$contact-detail-info-link-hover-color: $app-secondary-color !default;
+
+.contact {
+  flex-direction: column;
+  padding: 40px;
+
+  &__title {
+    font-family: $contact-title-font-family;
+    font-size: $contact-title-font-size;
+    color: $contact-title-font-color;
+    margin: 5px 0;
+  }
+
+  &__container {
+    display: flex;
+
+    &--column {
+      flex-direction: column;
+    }
+
+    &__detail {
+      display: flex;
+      padding: 10px;
+
+      &__icon {
+        font-size: $contact-detail-icon-size;
+        padding: 0 10px;
+        margin-right: 5px;
+      }
+
+      &__info {
+
+        &__title {
+          font-family: $contact-title-font-family;
+          font-size: $contact-detail-info-title-font-size;
+          color: $contact-title-font-color;
+        }
+
+        &__subtitle {
+          color: $contact-detail-info-subtitle-color;
+        }
+
+        &__link a {
+          color: $contact-detail-info-link-color;
+
+          &:hover {
+            color: $contact-detail-info-link-hover-color;
+          }
+        }
+      }
+    }
+  }
+}

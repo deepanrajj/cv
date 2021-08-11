@@ -1,0 +1,24 @@
+<div class="navigation">
+
+  <div class="navigation__container">
+
+    <!-- Menu -->
+    <ul class="navigation__container__menu">
+
+      <li *ngFor="let menu of menus" [id]="'menu__item__'+menu.id" class="navigation__container__menu__item">
+
+        <!-- Link -->
+        <a *ngIf="!menu.download" [title]="menu.tooltip" [routerLink]="[menu.url]" [routerLinkActive]="['active']">
+          <span *ngIf="menu.name">{{menu.name}}</span>
+          <i *ngIf="menu.iconName" class="icon {{menu.iconName}}"></i>
+        </a>
+
+        <!-- Download -->
+        <a *ngIf="menu.download" [title]="menu.tooltip" [href]="[menu.url]" [download]="menu.download" >
+          <span *ngIf="menu.name">{{menu.name}}</span>
+          <i *ngIf="menu.iconName" class="icon {{menu.iconName}}"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<div *ngIf="(contact$ | async) as contact" class="flex-grid contact">
+
+  <!-- Title -->
+  <ng-container *ngIf="contact.title">
+    <div class="contact__title">{{contact.title | uppercase}}</div>
+    <hr>
+  </ng-container>
+
+  <!-- Details -->
+  <div class="contact__container">
+    <div *ngFor="let detail of contact.details" [id]="'contact__container__detail__'+detail.id" class="contact__container__detail">
+      <div *ngIf="detail.iconName" class="contact__container__detail__icon">
+        <i [class]="detail.iconName"></i>
+      </div>
+      <div class="contact__container__detail__info">
+        <div class="contact__container__detail__info__title">{{detail?.title | uppercase}}</div>
+        <div *ngIf="detail.subtitle" class="contact__container__detail__info__subtitle">{{detail.subtitle}}</div>
+        <div *ngIf="detail.link" class="contact__container__detail__info__link">
+          <a [href]="'mailto:'+detail.link.url">{{detail.link.name}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Send Message Form -->
+  <div class="contact__container--column">
+    <app-send-message></app-send-message>
+  </div>
+</div>

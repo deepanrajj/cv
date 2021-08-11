@@ -1,0 +1,32 @@
+<div *ngIf="(about$ | async) as about" class="flex-grid about">
+
+  <!-- Expertises Info -->
+  <div *ngIf="about.expertiseInfo && about.expertiseInfo.expertises && about.expertiseInfo.expertises.length > 0" class="about__expertises">
+    <ng-container *ngIf="about.expertiseInfo.title">
+      <div class="about__expertises__title">{{about.expertiseInfo.title | uppercase}}</div>
+      <hr>
+    </ng-container>
+    <div class="about__expertises__container">
+      <app-progress-circle *ngFor="let expertise of about.expertiseInfo.expertises" [progress]="expertise"></app-progress-circle>
+    </div>
+  </div>
+
+  <!-- Skills Info -->
+  <div *ngIf="about.skillInfo && about.skillInfo.skills && about.skillInfo.skills.length > 0" class="about__skills">
+    <ng-container *ngIf="about.skillInfo.title">
+      <div class="about__skills__title">{{about.skillInfo.title | uppercase}}</div>
+      <hr>
+    </ng-container>
+    <app-collection [collections]="about.skillInfo.skills"></app-collection>
+  </div>
+
+  <!-- Experience Info -->
+  <div *ngIf="about.experience" class="about__experience">
+    <app-timeline [timeline]="about.experience"></app-timeline>
+  </div>
+
+  <!-- Education Info -->
+  <div *ngIf="about.education" class="about__education">
+    <app-timeline [timeline]="about.education"></app-timeline>
+  </div>
+</div>

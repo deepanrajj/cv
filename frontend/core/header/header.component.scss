@@ -1,0 +1,86 @@
+@import './src/styles-variables';
+
+/*************************************************************
+               header variables
+*************************************************************/
+$header-navigation-width: 70px !default;
+$header-navigation-background: $app-primary-color !default;
+$header-person-box-shadow: 0 32px 84px 0 rgb(0 0 0 / 50%) !default;
+$header-person-info-name-font-family: $app-font-family-semi-bold !default;
+$header-person-info-name-font-size: 24px !default;
+$header-person-info-name-color: $app-primary-color !default;
+$header-person-info-profile-list-li-width: 50px !default;
+$header-person-info-profile-list-li-height: 35px !default;
+$header-person-info-profile-list-li-anchor-font-size: 24px !default;
+$header-person-info-profile-list-li-anchor-color: $app-primary-color !default;
+$header-person-info-profile-list-li-anchor-hover-font-size: 28px !default;
+$header-person-info-profile-list-li-anchor-hover-color: $app-background-color !default;
+
+.header {
+  display: flex;
+
+  &__navigation {
+    flex: 0 0 $header-navigation-width;
+    background: $header-navigation-background;
+    margin: 40px 0;
+  }
+
+  &__person {
+    flex: 1 0 auto;
+    box-shadow: $header-person-box-shadow;
+    position: relative;
+
+    &__avatar {
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &__info {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      flex-flow: column;
+      width: 100%;
+      text-align: center;
+
+      &__name {
+        font-family: $header-person-info-name-font-family;
+        font-size: $header-person-info-name-font-size;
+        color: $header-person-info-name-color;
+      }
+
+      &__profile {
+
+        &__list {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          list-style: none;
+          margin: 0 0 50px;
+
+          li {
+            width: $header-person-info-profile-list-li-width;
+            height: $header-person-info-profile-list-li-height;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+              font-size: $header-person-info-profile-list-li-anchor-font-size;
+              color: $header-person-info-profile-list-li-anchor-color;
+
+              &:hover {
+                font-size: $header-person-info-profile-list-li-anchor-hover-font-size;
+                color: $header-person-info-profile-list-li-anchor-hover-color;
+                transform: scale(1.35);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

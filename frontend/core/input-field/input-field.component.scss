@@ -1,0 +1,26 @@
+/*************************************************************
+               input field variables
+*************************************************************/
+$input-field-control-padding: 10px 0 10px 10px !default;
+$input-field-control-box-shadow: inset 4px 6px 10px -4px rgba(0, 0, 0, 0.3), 0 1px 1px -1px rgba(255, 255, 255, 0.3) !default;
+$input-field-control-border-color: rgba(0, 0, 0, 0.25) !default;
+$input-field-control-color: #6E6E6E !default;
+
+.input-field {
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    &__control {
+      padding: $input-field-control-padding;
+      border-radius: 5px;
+      box-shadow: $input-field-control-box-shadow;
+      outline: none;
+      border: 1px solid $input-field-control-border-color;
+      margin-bottom: 10px;
+      color: $input-field-control-color;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<form class="send-message"
+      [formGroup]="sendMessage.form"
+      (ngSubmit)="sendMessage.submit(sendMessage.form)">
+
+  <!-- Name, Email, Message field -->
+  <app-input-field [form]="sendMessage.form" [key]="'name'" [controlType]="'textbox'" [inputType]="'text'" [placeholder]="'Name*'"></app-input-field>
+  <app-input-field [form]="sendMessage.form" [key]="'email'" [controlType]="'textbox'" [inputType]="'email'" [placeholder]="'Email*'"></app-input-field>
+  <app-input-field [form]="sendMessage.form" [key]="'message'" [controlType]="'textarea'" [placeholder]="'Your Message'"></app-input-field>
+
+  <!-- Button Container -->
+  <div class="send-message__buttons">
+    <app-button *ngFor="let button of sendMessage.buttons"
+                [button]="button"
+                [disabled]="button.disableOnInvalidForm ? sendMessage.form.invalid : false"></app-button>
+  </div>
+
+  <!-- API Response Messages -->
+  <div *ngIf="sendMessage.formMessage" class="send-message__response">
+    {{sendMessage.formMessage}}
+  </div>
+</form>

@@ -1,0 +1,26 @@
+<div class="timeline">
+
+  <!-- Title -->
+  <div class="timeline__title">{{timeline.title | uppercase}}</div>
+  <hr>
+
+  <!-- Icon -->
+  <div *ngIf="timeline.iconName" class="timeline__icon"><i class="{{timeline.iconName}}"></i></div>
+
+  <div class="timeline__row">
+    <div class="timeline__row__container">
+
+      <!-- Tile Container -->
+      <div *ngFor="let tileInfo of timeline.tileInfos" class="timeline__row__container__tile">
+        <div class="timeline__row__container__tile__info">
+          <span>{{tileInfo.title}}</span>
+          <span *ngIf="tileInfo.link"> | <a [target]="tileInfo.link.target" [href]="tileInfo.link.url">{{tileInfo.link.name}}</a></span>
+        </div>
+        <div *ngIf="tileInfo.subtitle" [class.highlight]="tileInfo.highlight"
+             class="timeline__row__container__tile__subtitle">{{tileInfo.subtitle | uppercase}}</div>
+        <div *ngIf="tileInfo.about"
+             class="timeline__row__container__tile__about" [innerHTML]="sanitizeHtml(tileInfo.about)"></div>
+      </div>
+    </div>
+  </div>
+</div>

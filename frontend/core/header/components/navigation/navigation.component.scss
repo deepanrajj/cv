@@ -1,0 +1,53 @@
+@import 'src/styles-variables';
+
+/*************************************************************
+               navigation variables
+*************************************************************/
+$navigation-min-height: 450px !default;
+$navigation-menu-li-anchor-font-size: 28px !default;
+$navigation-menu-li-anchor-color: $app-tertiary-color !default;
+$navigation-menu-li-anchor-hover-color: $app-secondary-color !default;
+$navigation-menu-li-anchor-active-font-size: 34px !default;
+$navigation-menu-li-anchor-active-color: $app-secondary-color !default;
+$navigation-menu-li-anchor-span-font-size: 14px !default;
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  min-height: $navigation-min-height;
+
+  &__container {
+    margin: auto 0;
+
+    &__menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style: none;
+        padding: 16px;
+        text-align: center;
+
+        a {
+          font-size: $navigation-menu-li-anchor-font-size;
+          color: $navigation-menu-li-anchor-color;
+
+          &:hover {
+            color: $navigation-menu-li-anchor-hover-color;
+          }
+
+          &.active {
+            font-size: $navigation-menu-li-anchor-active-font-size;
+            color: $navigation-menu-li-anchor-active-color;
+            transform: scale(1.35);
+          }
+
+          span {
+            font-size: $navigation-menu-li-anchor-span-font-size;
+          }
+        }
+      }
+    }
+  }
+}

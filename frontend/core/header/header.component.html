@@ -1,0 +1,34 @@
+<div *ngIf="(header$ | async) as header" class="header">
+
+  <!-- Navigation Container -->
+  <div *ngIf="header.menus" class="header__navigation">
+    <app-navigation [menus]="header.menus"></app-navigation>
+  </div>
+
+  <!-- Person Container -->
+  <div *ngIf="header.person" class="header__person">
+
+    <!-- Person Image -->
+    <div class="header__person__avatar" [style]="'background-image: url('+header.person.imageUrl+');'">
+    </div>
+
+    <!-- Person Info -->
+    <div class="header__person__info">
+
+      <!-- Person Name -->
+      <div class="header__person__info__name">{{header.person.firstName}} {{header.person.lastName}}</div>
+
+      <!-- Person Profile Lists -->
+      <div *ngIf="header.person.profiles && header.person.profiles.length > 0" class="header__person__info__profile">
+        <ul class="header__person__info__profile__list">
+          <li *ngFor="let profile of header.person.profiles">
+            <a [href]="profile.url" [target]="profile.target">
+              <span *ngIf="profile.name">{{profile.name}}</span>
+              <i *ngIf="profile.iconName" [class]="profile.iconName"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

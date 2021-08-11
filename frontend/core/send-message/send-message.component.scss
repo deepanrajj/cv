@@ -1,0 +1,18 @@
+@import './src/styles-variables';
+
+/*************************************************************
+               send message variables
+*************************************************************/
+$send-message-width: 70% !default;
+
+.send-message {
+  width: $send-message-width;
+  padding: 20px 50px;
+  margin: 0 auto;
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,78 @@
+@import './src/styles-variables';
+
+/*************************************************************
+               progress circle variables
+*************************************************************/
+$progress-circle-color: #777777 !default;
+$progress-circle-container-width: 100px !default;
+$progress-circle-container-height: 100px !default;
+$progress-circle-container-box-shadow: inset 0 0 50px #000000 !default;
+$progress-circle-container-background: #222222 !default;
+$progress-circle-container-svg-width: 100px !default;
+$progress-circle-container-svg-height: 100px !default;
+$progress-circle-container-svg-circle-stroke: #191919 !default;
+$progress-circle-container-svg-circle-stroke-width: 10 !default;
+$progress-circle-container-svg-circle-inner-stroke-dasharray: 282 !default;
+$progress-circle-container-svg-circle-inner-stroke-dashoffset: 282 !default;
+$progress-circle-container-svg-circle-inner-stroke: $app-secondary-color !default;
+$progress-circle-container-number-font-family: $app-font-family-medium !default;
+$progress-circle-container-number-font-size: 28px !default;
+$progress-circle-name-font-size: 24px !default;
+
+.progress-circle {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  color: $progress-circle-color;
+
+  &__container {
+    position: relative;
+    width: $progress-circle-container-width;
+    height: $progress-circle-container-height;
+    border-radius: 50%;
+    box-shadow: $progress-circle-container-box-shadow;
+    background: $progress-circle-container-background;
+    z-index: 1;
+
+    svg {
+      position: relative;
+      width: $progress-circle-container-svg-width;
+      height: $progress-circle-container-svg-height;
+      transform: rotate(-85deg);
+
+      circle {
+        width: 100%;
+        height: 100%;
+        fill: none;
+        stroke: $progress-circle-container-svg-circle-stroke;
+        stroke-width: $progress-circle-container-svg-circle-stroke-width;
+        stroke-linecap: round;
+        transform: translate(5px, 5px);
+
+        &:nth-child(2) {
+          stroke-dasharray: $progress-circle-container-svg-circle-inner-stroke-dasharray;
+          stroke-dashoffset: $progress-circle-container-svg-circle-inner-stroke-dashoffset;
+          stroke: $progress-circle-container-svg-circle-inner-stroke;
+        }
+      }
+    }
+
+    &__number {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: $progress-circle-container-number-font-family;
+      font-size: $progress-circle-container-number-font-size;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__name {
+    font-size: $progress-circle-name-font-size;
+    margin-top: 10px;
+  }
+}

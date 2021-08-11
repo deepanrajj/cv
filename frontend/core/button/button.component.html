@@ -1,0 +1,8 @@
+<button *ngIf="button" [id]="button?.id"
+        [type]="button?.type || 'button'"
+        class="button {{button?.class ? button?.class : ''}}"
+        (click)="button.onClick ? button.onClick(button) : ''"
+        [disabled]="button?.disabled || disabled"
+        [title]="button?.tooltip">
+  {{button.text}}
+</button>

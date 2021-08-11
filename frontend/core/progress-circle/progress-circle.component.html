@@ -1,0 +1,18 @@
+<div [id]="'progress-circle__'+progress.id" class="progress-circle">
+
+  <div class="progress-circle__container">
+
+    <!-- Circle Container -->
+    <svg>
+      <circle cx="45" cy="45" r="45"></circle>
+      <circle #circle cx="45" cy="45" r="45"></circle>
+    </svg>
+
+    <!-- Percent -->
+    <div #percent class="progress-circle__container__number">{{progress.percent}}</div>
+  </div>
+
+  <!-- Name -->
+  <div class="progress-circle__name">{{progress.name | uppercase}}</div>
+</div>
+
