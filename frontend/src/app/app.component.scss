@@ -1,4 +1,5 @@
 @import '../styles-variables';
+@import './core/mixins/media-queries';
 
 /*************************************************************
                app variables
@@ -35,6 +36,22 @@ $app-container-right-max-height: 450px !default;
         min-height: $app-container-right-min-height;
         max-height: $app-container-right-max-height;
         overflow-y: scroll;
+      }
+    }
+  }
+}
+
+@include media-query-between(xs, md) {
+  .app {
+
+    &__container {
+      flex-direction: column;
+
+      &__right {
+
+        &__container {
+          margin-top: 0;
+        }
       }
     }
   }

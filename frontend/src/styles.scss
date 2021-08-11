@@ -1,16 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../core/scss/page-responsive-styles';
 @import 'styles-variables';
 @import 'styles-reset';
 
+/*************************************************************
+               global style variables
+*************************************************************/
+$body-background-color: $app-background-color !default;
+$body-background-font-family: $app-font-family !default;
+$body-background-font-size: 14px !default;
+$body-color: $app-secondary-color !default;
+$scrollbar-background-color: #F5F5F5 !default;
+$scrollbar-thumb-background-color: $app-font-color-primary !default;
+$scrollbar-thumb-hover-background-color: $app-tertiary-color !default;
+$hr-background-color: #ffff00 !default;
+
 body {
-  height: 100%;
   display: flex;
   flex-direction: column;
-  background: $app-background-color;
-  font-size: 14px;
+  height: 100%;
   width: 100%;
-  color: $app-secondary-color;
-  font-family: $app-font-family;
+  background: $body-background-color;
+  font-family: $body-background-font-family;
+  font-size: $body-background-font-size;
+  color: $body-color;
 }
 
 html, body {
@@ -18,11 +31,6 @@ html, body {
   padding: 0;
   min-height: 100%;
   height: 100%;
-}
-
-button {
-  background: #d8e9fa;
-  padding: 10px 25px;
 }
 
 a {
@@ -38,102 +46,27 @@ a:hover {
 /* width */
 ::-webkit-scrollbar {
   width: 6px;
-  background-color: #F5F5F5;
+  background: $scrollbar-background-color;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  background-color: #F5F5F5;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background: $scrollbar-background-color;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background-color: #000000;
+  background: $scrollbar-thumb-background-color;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $app-tertiary-color;
+  background: $scrollbar-thumb-hover-background-color;
 }
 
 hr {
-  background: #ffff00;
+  background: $hr-background-color;
   width: 100%;
   height: 1px;
-}
-
-.flex-grid {
-  display: flex;
-  flex-shrink: 0;
-  justify-content: space-between;
-  margin: 0 auto;
-
-  &--column {
-    flex-direction: column;
-  }
-
-  &__item {
-    margin: 5px;
-    padding: 20px;
-
-    &--full-width {
-      width: 100%;
-    }
-
-    &:first-child:nth-last-child(1),
-    &:first-child:nth-last-child(1) ~ div {
-      width: 100%;
-    }
-
-    &:first-child:nth-last-child(2),
-    &:first-child:nth-last-child(2) ~ div {
-      width: 50%;
-    }
-
-    &:first-child:nth-last-child(3),
-    &:first-child:nth-last-child(3) ~ div {
-      width: 33%;
-    }
-
-    &:first-child:nth-last-child(4),
-    &:first-child:nth-last-child(4) ~ div {
-      width: 25%;
-    }
-
-    &:first-child:nth-last-child(5),
-    &:first-child:nth-last-child(5) ~ div {
-      width: 20%;
-    }
-
-    &:first-child:nth-last-child(6),
-    &:first-child:nth-last-child(6) ~ div {
-      width: 16%;
-    }
-  }
-}
-
-.full-width {
-  max-width: 1200px;
-  width: 100%;
-}
-
-.clear-fix {
-  clear: both;
-  display: table;
-  line-height: 0;
-  content: "";
-  height:0;
-}
-
-
-@media screen and (max-width:800px) {
-  .flex-grid {
-    flex-direction: column;
-    flex-wrap: nowrap;
-
-    &__item {
-      width: 100%;
-    }
-  }
 }

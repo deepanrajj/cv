@@ -25,4 +25,11 @@ $about-title-font-color: $app-font-color-secondary !default;
       justify-content: center;
     }
   }
+
+  &__expertises {
+
+    &__container {
+      flex-wrap: wrap;
+    }
+  }
 }

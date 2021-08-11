@@ -1,4 +1,5 @@
 @import './src/styles-variables';
+@import './core/mixins/media-queries';
 
 /*************************************************************
                header variables
@@ -81,6 +82,15 @@ $header-person-info-profile-list-li-anchor-hover-color: $app-background-color !d
           }
         }
       }
+    }
+  }
+}
+
+@include media-query-between(xs, md) {
+  .header {
+
+    &__navigation {
+      margin-bottom: 0;
     }
   }
 }
