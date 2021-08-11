@@ -38,9 +38,14 @@ router.get('/', (req, res) => {
 // /api/contact => POST
 router.post('/', (req, res) => {
     const message = req.body.message;
-    console.log('Message to be sent:', message);
-    messagesToBeSent.push(message);
-    res.status(200);
+
+    if (message) {
+        console.log('Message to be sent:', message);
+        messagesToBeSent.push(message);
+        res.send().status(200);
+    } else {
+        res.send().status(404);
+    }
 });
 
 module.exports = router;

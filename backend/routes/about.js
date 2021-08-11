@@ -128,7 +128,15 @@ let about = {
                     url: 'https://www.infosys.com/'
                 },
                 subtitle: '03 2011 - 09 2014',
-                about: '<div><b>Project Summary:</b> Development of eCommerce site for Singapore Telecom<ul><li>Created front-end UI pages by using the Visual Designs for the site.</li><li>Developed servlets to call the Payment Gateway and responsible for integrating it to the site.</li><li>Developing of Adobe CQ5 components from Requirements to Testing phase.</li><li>Responsible for Adobe CQ5 training to the new joiners.</li></ul></div><div><b>Project Summary:</b> Development of Knowledge Management Portal for Saudi Telecom<ul><li>Developing of Wiki Modules using the IBM WebSphere portal.</li><li>Responsible for the creation of UI themes in the knowledge management portal.</li><li>Integrating IBM WebSphere portal with LDAP and also part of integrating IBM WebSphere Portal and IBM Connections.</li></ul></div>'
+                about: '<div><b>Project Summary:</b> Development of eCommerce site for Singapore Telecom<ul><li>Created ' +
+                    'front-end UI pages by using the Visual Designs for the site.</li><li>Developed servlets to call ' +
+                    'the Payment Gateway and responsible for integrating it to the site.</li><li>Developing of Adobe ' +
+                    'CQ5 components from Requirements to Testing phase.</li><li>Responsible for Adobe CQ5 training ' +
+                    'to the new joiners.</li></ul></div><div><b>Project Summary:</b> Development of Knowledge ' +
+                    'Management Portal for Saudi Telecom<ul><li>Developing of Wiki Modules using the IBM WebSphere ' +
+                    'portal.</li><li>Responsible for the creation of UI themes in the knowledge management portal.</li>' +
+                    '<li>Integrating IBM WebSphere portal with LDAP and also part of integrating IBM WebSphere Portal ' +
+                    'and IBM Connections.</li></ul></div>'
             }
         ]
     },
